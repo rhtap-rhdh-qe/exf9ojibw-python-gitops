@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: exf9ojibw-python-gitops
+  description: This is GitOps manifest for exf9ojibw-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=exf9ojibw-python
+    backstage.io/kubernetes-id: exf9ojibw-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: exf9ojibw-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:exf9ojibw-python
